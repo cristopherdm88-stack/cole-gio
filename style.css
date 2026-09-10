@@ -513,8 +513,193 @@ nav a.activo::after {
 
     color: #dce7f8;
 }
+/* =========================
+   FORMULARIO DE CONTACTO
+========================= */
+
+.contacto {
+    background: #f5f7fb;
+
+    padding: 70px 8%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 70px;
+}
 
 
+.contacto-info {
+    width: 40%;
+
+    padding-top: 20px;
+}
+
+
+.contacto-info h2 {
+    color: #123875;
+
+    font-size: 32px;
+
+    margin: 15px 0 20px;
+}
+
+
+.contacto-info > p {
+    color: #555;
+
+    line-height: 1.7;
+}
+
+
+.datos-contacto {
+    margin-top: 30px;
+}
+
+
+.datos-contacto p {
+    margin: 15px 0;
+
+    color: #123875;
+
+    font-weight: bold;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    width: 450px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+.formulario h3 {
+    color: #123875;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.formulario label {
+    display: block;
+
+    color: #333;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+}
+
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    font-family: Arial;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+
+    border-color: #0645b5;
+}
+
+
+.formulario textarea {
+
+    resize: vertical;
+}
+
+
+.formulario button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #0645b5;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+.formulario button:hover {
+
+    background: #c71828;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .contacto {
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .contacto-info {
+
+        width: 100%;
+    }
+
+    .formulario {
+
+        width: 100%;
+    }
+
+}
+.contador {
+    text-align: center;
+    margin: 20px 0;
+    padding: 12px;
+    font-size: 16px;
+    color: #123875;
+    font-weight: bold;
+}
 /* =========================
    FOOTER
 ========================= */

@@ -215,30 +215,12 @@
 
     <div class="fotos">
 
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\colegio 2.jpg" alt="Colegio">
-        </div>
-
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\colegio4.jpg" alt="Estudiantes">
-        </div>
-
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\images.jpg" alt="Actividades escolares">
-        </div>
-
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\imagen.jpg" alt="Evento escolar">
-        </div>
-
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\colgio.jpg" alt="Estudiantes del colegio">
-        </div>
-
-        <div class="foto">
-            <img src="C:\Users\REMIGIO\Music\proyecto interdiciplinario\colegio3.jpg" alt="Actividad académica">
-        </div>
-
+        <img src="colegio.jpg" alt="Colegio">
+<img src="colegio 2.jpg" alt="Colegio">
+<img src="colegio3.jpg" alt="Colegio">
+<img src="colegio4.jpg" alt="Colegio">
+<img src="imagen.jpg" alt="Actividad escolar">
+<img src="images.jpg" alt="Actividad escolar">
     </div>
 
 </section>
@@ -247,83 +229,148 @@
          INFORMACIÓN DE CONTACTO
     ========================== -->
 
-    <section class="contacto" id="contacto">
+    <!-- =========================
+     CONTACTO
+========================= -->
 
-        <div class="dato">
+<section class="contacto" id="contacto">
 
-            <div class="dato-icono">
-                📍
-            </div>
+    <div class="contacto-info">
 
-            <div>
-                <h4>DIRECCIÓN</h4>
+        <p class="subtitulo">
+            CONTÁCTANOS
+        </p>
 
-                <p>
-                    Av. La Republica, Assad Bucaram y los Shyris
-                     Huaquillas, Ecuador<br>
-                    
-                </p>
-            </div>
+        <h2>
+            ¿QUIERES MÁS INFORMACIÓN?
+        </h2>
 
-        </div>
+        <p>
+            Déjanos tus datos y nos pondremos en contacto
+            contigo para brindarte más información sobre
+            nuestra institución educativa.
+        </p>
 
+        <div class="datos-contacto">
 
-        <div class="dato">
+            <p>📍 Av. Siempre Viva 123</p>
 
-            <div class="dato-icono">
-                ☎
-            </div>
+            <p>☎ (02) 123 4567</p>
 
-            <div>
-                <h4>TELÉFONO</h4>
-
-                <p>
-                    (02) 123 4567<br>
-                    098 765 4321
-                </p>
-            </div>
+            <p>✉ info@micolegio.edu.ec</p>
 
         </div>
 
-
-        <div class="dato">
-
-            <div class="dato-icono">
-                ✉
-            </div>
-
-            <div>
-                <h4>CORREO</h4>
-
-                <p>
-                    info@micolegio.edu.ec<br>
-                    remigiogeog@gmail.com
-                </p>
-            </div>
-
-        </div>
+    </div>
 
 
-        <div class="dato">
+    <!-- FORMULARIO -->
 
-            <div class="dato-icono">
-                ◷
-            </div>
+    <div class="formulario">
 
-            <div>
-                <h4>HORARIO</h4>
+        <h3>
+            Solicita información
+        </h3>
 
-                <p>
-                    Lunes a Viernes<br>
-                    07h00 - 13h00
-                </p>
-            </div>
+        <form action="AQUI_VA_TU_FORMULARIO_FORMSPREE"
+              method="POST">
 
-        </div>
+            <label>
+                Nombre completo
+            </label>
 
-    </section>
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Escribe tu nombre"
+                required
+            >
 
 
+            <label>
+                Correo electrónico
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="ejemplo@gmail.com"
+                required
+            >
+
+
+            <label>
+                Teléfono
+            </label>
+
+            <input
+                type="tel"
+                name="telefono"
+                placeholder="099 123 4567"
+            >
+
+
+            <label>
+                Curso de interés
+            </label>
+
+            <select name="curso">
+
+                <option value="">
+                    Selecciona un curso
+                </option>
+
+                <option>
+                    Educación Inicial
+                </option>
+
+                <option>
+                    Educación Básica
+                </option>
+
+                <option>
+                    Bachillerato
+                </option>
+
+            </select>
+
+
+            <label>
+                Mensaje
+            </label>
+
+            <textarea
+                name="mensaje"
+                placeholder="Escribe tu mensaje..."
+                rows="5"
+            ></textarea>
+
+
+            <button type="submit">
+                ENVIAR SOLICITUD →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+<div class="contador">
+    👁️ Visitas: <span id="visitas">0</span>
+</div>
+<script>
+    let visitas = localStorage.getItem("contadorVisitas");
+
+    if (visitas === null) {
+        visitas = 1;
+    } else {
+        visitas = parseInt(visitas) + 1;
+    }
+
+    localStorage.setItem("contadorVisitas", visitas);
+
+    document.getElementById("visitas").textContent = visitas;
+</script>
     <!-- =========================
          PIE DE PÁGINA
     ========================== -->
