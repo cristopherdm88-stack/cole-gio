@@ -33,7 +33,7 @@
         <nav>
 
             <a href="#" class="activo">INICIO</a>
-            <a href="#nosotros">NOSOTROS</a>
+            <a href="nosotros.html">NOSOTROS</a>
             <a href="#academico">ACADÉMICO</a>
             <a href="#galeria">GALERIA</a>
             <a href="#contacto">CONTACTO</a>
@@ -272,86 +272,33 @@
             Solicita información
         </h3>
 
-        <form action="AQUI_VA_TU_FORMULARIO_FORMSPREE"
-              method="POST">
+        <form action="https://formspree.io/f/mwlpajpb" method="POST">
 
-            <label>
-                Nombre completo
-            </label>
-
-            <input
-                type="text"
-                name="nombre"
-                placeholder="Escribe tu nombre"
-                required
-            >
-
-
-            <label>
-                Correo electrónico
-            </label>
-
-            <input
-                type="email"
-                name="email"
-                placeholder="ejemplo@gmail.com"
-                required
-            >
-
-
-            <label>
-                Teléfono
-            </label>
-
-            <input
-                type="tel"
-                name="telefono"
-                placeholder="099 123 4567"
-            >
-
-
-            <label>
-                Curso de interés
-            </label>
-
+            <label>Nombre completo</label>
+            <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+        
+            <label>Correo electrónico</label>
+            <input type="email" name="email" placeholder="ejemplo@gmail.com" required>
+        
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" placeholder="099 123 4567">
+        
+            <label>Curso de interés</label>
             <select name="curso">
-
-                <option value="">
-                    Selecciona un curso
-                </option>
-
-                <option>
-                    Educación Inicial
-                </option>
-
-                <option>
-                    Educación Básica
-                </option>
-
-                <option>
-                    Bachillerato
-                </option>
-
+                <option value="">Selecciona un curso</option>
+                <option>Educación Inicial</option>
+                <option>Educación Básica</option>
+                <option>Bachillerato</option>
             </select>
-
-
-            <label>
-                Mensaje
-            </label>
-
-            <textarea
-                name="mensaje"
-                placeholder="Escribe tu mensaje..."
-                rows="5"
-            ></textarea>
-
-
+        
+            <label>Mensaje</label>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje..." rows="5"></textarea>
+        
             <button type="submit">
                 ENVIAR SOLICITUD →
             </button>
-
+        
         </form>
-
     </div>
 
 </section>
