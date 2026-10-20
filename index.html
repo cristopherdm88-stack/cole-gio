@@ -1,340 +1,544 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi Colegio</title>
-
+    <meta name="description" content="Aprende a identificar páginas sospechosas, spyware, phishing y otras amenazas digitales.">
+    <meta name="theme-color" content="#05060f">
+    <meta property="og:title" content="Navega Seguro | Seguridad Digital">
+    <meta property="og:description" content="Aprende a identificar páginas sospechosas y proteger tu información.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2305060f' stroke='%2398c0ef' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/%3E%3C/svg%3E">
+    <title>Navega Seguro | Seguridad Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Space+Grotesk:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- =========================
-         BARRA DE NAVEGACIÓN
-    ========================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+</svg>
 
-    <header>
 
-        <div class="logo">
+<a href="#contenido" class="saltar">Saltar al contenido</a>
 
-            <div class="logo-icono">🎓</div>
+<header class="header">
+    <div class="header-contenido">
+        <a href="#inicio" class="logo">
+            <span class="logo-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <span class="logo-texto">NAVEGA SEGURO<small>Protección en Internet</small></span>
+        </a>
 
-            <div>
-                <h2>REMIGIO</h2>
-                <span>EDUCACIÓN Y VALORES</span>
-            </div>
-
-        </div>
-
-
-        <nav>
-
-            <a href="#" class="activo">INICIO</a>
-            <a href="nosotros.html">NOSOTROS</a>
-            <a href="#academico">ACADÉMICO</a>
-            <a href="#galeria">GALERIA</a>
-            <a href="#contacto">CONTACTO</a>
-
+        <nav id="menu" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#paginas">Páginas sospechosas</a>
+            <a href="#senales">Señales de alerta</a>
+            <a href="#proteccion">Protección</a>
+            <a href="#que-hacer">¿Qué hacer?</a>
+            <a href="#contacto">Contacto</a>
         </nav>
 
-    </header>
+        <div class="acciones">
+            <a class="icono-header" href="#buscador" aria-label="Buscar amenazas"><svg class="icono" aria-hidden="true"><use href="#i-search"/></svg></a>
+            <button class="menu-boton" id="menuBoton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg class="icono" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        </div>
+    </div>
+</header>
 
+<main id="contenido">
 
-    <!-- =========================
-         PORTADA
-    ========================== -->
-
-    <section class="portada">
-
-        <div class="contenido">
-
-            <p class="bienvenida">
-                BIENVENIDOS A LA 
+    <!-- VISTA: INICIO -->
+    <div class="vista" id="vista-inicio" data-hash="inicio" data-titulo="Inicio">
+    <section class="hero" id="inicio">
+        <div class="hero-contenido">
+            <span class="subtitulo">Seguridad digital</span>
+            <h1>Tu información <span>también vale</span></h1>
+            <p class="hero-texto">
+                Aprende a reconocer páginas sospechosas, evita estafas y protege
+                tus datos personales mientras navegas por Internet.
             </p>
+            <div class="hero-botones">
+                <a href="#amenazas" class="btn btn-azul">Explorar contenido <svg class="icono" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                <a href="#video" class="btn btn-borde"><svg class="icono" aria-hidden="true"><use href="#i-play"/></svg> Ver video</a>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <svg viewBox="0 0 560 380" role="presentation" focusable="false">
+                <defs>
+                    <radialGradient id="g-halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1f7bff" stop-opacity=".55"/><stop offset="1" stop-color="#1f7bff" stop-opacity="0"/></radialGradient>
+                    <linearGradient id="g-pantalla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d3a8f"/><stop offset="1" stop-color="#061a49"/></linearGradient>
+                    <linearGradient id="g-escudo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4aa3ff"/><stop offset="1" stop-color="#0a49c9"/></linearGradient>
+                </defs>
+                <ellipse cx="290" cy="200" rx="270" ry="170" fill="url(#g-halo)"/>
+                <path d="M105 296h380l-22 20q-170 14-336 0z" fill="#0f2a63" stroke="#3b8cff" stroke-width="2"/>
+                <rect x="150" y="62" width="300" height="200" rx="12" fill="url(#g-pantalla)" stroke="#4aa3ff" stroke-width="3"/>
+                <rect x="164" y="76" width="272" height="172" rx="5" fill="#071b4d"/>
+                <g transform="translate(300 160)">
+                    <path transform="translate(-52 -58) scale(4.35)" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" fill="url(#g-escudo)" stroke="#bfe3ff" stroke-width=".5"/>
+                    <use href="#i-lock" x="-22" y="-32" width="44" height="44" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g fill="rgba(20,80,200,.4)" stroke="#4aa3ff" stroke-width="2">
+                    <rect x="92" y="52" width="72" height="72" rx="14"/>
+                    <rect x="60" y="214" width="72" height="72" rx="14"/>
+                    <rect x="438" y="100" width="72" height="72" rx="14"/>
+                </g>
+                <g fill="none" stroke="#bfe3ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="#i-globe" x="110" y="70" width="36" height="36"/>
+                    <use href="#i-mail" x="78" y="232" width="36" height="36"/>
+                    <use href="#i-user" x="456" y="118" width="36" height="36"/>
+                </g>
+            </svg>
+        </div>
+    </section>
 
-            <h1>
-                UNIDAD EDUCATIVA REMIGIO GEO GOMEZ GUERRERO
-            </h1>
+    <!-- BUSCADOR -->
+    <section class="buscador-seccion">
+        <div class="contenedor">
+            <h2>¿Qué amenaza deseas conocer?</h2>
+            <p>Busca información sobre los principales riesgos digitales.</p>
 
-            <div class="decoracion">
-
-                <span></span>
-
-                <b>🎓</b>
-
-                <span></span>
-
+            <label for="buscador" class="sr-only">Buscar una amenaza digital</label>
+            <div class="buscador">
+                <svg class="icono" aria-hidden="true"><use href="#i-search"/></svg>
+                <input type="search" id="buscador" placeholder="Ejemplo: spyware, phishing, malware..." autocomplete="off">
+                <button id="buscarBtn" type="button">Buscar</button>
             </div>
 
+            <p id="resultadoBusqueda" class="resultado" role="status"></p>
+        </div>
+    </section>
+
+    <!-- AMENAZAS -->
+    <section class="seccion" id="amenazas">
+        <div class="contenedor">
+            <div class="encabezado">
+                <div>
+                    <span class="subtitulo">Conoce los riesgos</span>
+                    <h2 class="titulo">Principales amenazas</h2>
+                    <p class="descripcion">Conoce los tipos de páginas y archivos peligrosos que pueden poner en riesgo tu información.</p>
+                </div>
+                <button type="button" class="ver-todas" id="verTodas" aria-expanded="false" aria-controls="tarjetasAmenazas">Ver todas</button>
+            </div>
+
+            <div class="grid-tarjetas oculto" id="skeletons" aria-hidden="true">
+                <div class="skeleton-card"><div class="skeleton skeleton-icono"></div><div class="skeleton skeleton-titulo"></div><div class="skeleton skeleton-texto"></div><div class="skeleton skeleton-texto"></div></div>
+                <div class="skeleton-card"><div class="skeleton skeleton-icono"></div><div class="skeleton skeleton-titulo"></div><div class="skeleton skeleton-texto"></div><div class="skeleton skeleton-texto"></div></div>
+                <div class="skeleton-card"><div class="skeleton skeleton-icono"></div><div class="skeleton skeleton-titulo"></div><div class="skeleton skeleton-texto"></div><div class="skeleton skeleton-texto"></div></div>
+                <div class="skeleton-card"><div class="skeleton skeleton-icono"></div><div class="skeleton skeleton-titulo"></div><div class="skeleton skeleton-texto"></div><div class="skeleton skeleton-texto"></div></div>
+            </div>
+
+            <div class="grid-tarjetas" id="tarjetasAmenazas">
+                <article class="tarjeta">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-eye"/></svg></div>
+                    <span class="nivel">Privacidad</span>
+                    <h3>Spyware</h3>
+                    <p>Un tipo de malware que espía tu actividad y recopila información sin que lo notes.</p>
+                    <a href="#spyware">Saber más</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-mail"/></svg></div>
+                    <span class="nivel">Fraude</span>
+                    <h3>Phishing</h3>
+                    <p>Mensajes y sitios falsos que intentan engañarte para conseguir tus contraseñas o datos bancarios.</p>
+                    <a href="#senales">Saber más</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-bug"/></svg></div>
+                    <span class="nivel">Software malicioso</span>
+                    <h3>Malware</h3>
+                    <p>Programas diseñados para dañar tu dispositivo o comprometer tu información. Incluye virus y spyware.</p>
+                    <a href="#proteccion">Saber más</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-globe"/></svg></div>
+                    <span class="nivel">Navegación</span>
+                    <h3>Páginas falsas</h3>
+                    <p>Sitios que imitan a los reales, con direcciones casi idénticas, para robar tu información.</p>
+                    <a href="#paginas">Saber más</a>
+                </article>
+
+                <article class="tarjeta extra">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-card"/></svg></div>
+                    <span class="nivel">Fraude</span>
+                    <h3>Estafas digitales</h3>
+                    <p>Ofertas falsas, premios inventados y tiendas fraudulentas que buscan aprovecharse de ti.</p>
+                    <a href="#senales">Saber más</a>
+                </article>
+
+                <article class="tarjeta extra">
+                    <div class="tarjeta-icono" aria-hidden="true"><svg class="icono" aria-hidden="true"><use href="#i-lock"/></svg></div>
+                    <span class="nivel">Cuentas</span>
+                    <h3>Robo de contraseñas</h3>
+                    <p>Intentos de obtener tus credenciales mediante engaños, filtraciones u otros métodos.</p>
+                    <a href="#proteccion">Saber más</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- VISTA: SPYWARE -->
+    <div class="vista" id="vista-spyware" data-hash="spyware" data-menu="inicio" data-titulo="Spyware">
+    <section class="spyware" id="spyware">
+        <div class="contenedor">
+            <span class="subtitulo">Amenaza destacada</span>
+            <h2>¿Qué es el spyware?</h2>
+            <p class="spyware-intro">
+                Lo destacamos porque actúa en silencio: puede espiar tu actividad sin que lo notes.
+                Aquí verás qué es, cómo reconocerlo y qué hacer.
+            </p>
+
+            <div class="spyware-menu">
+                <a href="#definicion">Definición</a>
+                <a href="#funcionamiento">Qué hace</a>
+                <a href="#deteccion">Detección</a>
+                <a href="#accion">Qué hacer</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor contenido-articulo">
+
+            <article id="definicion">
+                <h3>Definición de spyware</h3>
+                <p>
+                    El spyware es un tipo de malware que se instala en un dispositivo,
+                    normalmente sin que el usuario lo advierta, y observa lo que hace
+                    para enviarlo a un tercero.
+                </p>
+            </article>
+
+            <article id="funcionamiento">
+                <h3>¿Qué hace el spyware?</h3>
+                <p>Según el programa, puede registrar páginas visitadas, capturar lo que escribes (incluidas contraseñas), mostrar anuncios no deseados o cambiar la configuración del navegador.</p>
+            </article>
+
+            <article id="deteccion">
+                <h3>¿Cómo reconocer posibles problemas?</h3>
+                <p>Estas señales justifican una revisión, pero por sí solas no confirman una infección:</p>
+                <ul class="lista">
+                    <li>El equipo va más lento o la batería se agota más rápido de lo normal.</li>
+                    <li>El navegador cambia de página de inicio o buscador sin que lo hayas pedido.</li>
+                    <li>Aparecen extensiones o aplicaciones que no recuerdas haber instalado.</li>
+                    <li>Salen ventanas emergentes con frecuencia inusual.</li>
+                </ul>
+            </article>
+
+            <article id="accion">
+                <h3>¿Qué hacer si sospechas de una infección?</h3>
+                <ol class="lista">
+                    <li>Ejecuta un análisis completo con un antivirus de confianza.</li>
+                    <li>Desinstala las aplicaciones y extensiones que no reconozcas.</li>
+                    <li>Cambia tus contraseñas desde otro dispositivo limpio y activa la verificación en dos pasos.</li>
+                    <li>Si el problema continúa, pide ayuda a un técnico o restaura el equipo.</li>
+                </ol>
+            </article>
+
+        </div>
+    </section>
+
+    </div>
+
+    <!-- VISTA: PÁGINAS SOSPECHOSAS -->
+    <section class="seccion vista" id="paginas" data-hash="paginas" data-titulo="Páginas sospechosas">
+        <div class="contenedor">
+            <span class="subtitulo">Aprende a compararlas</span>
+            <h2 class="titulo">Así se ve una página falsa</h2>
+            <p class="descripcion">Los sitios falsos copian a los reales con cambios muy pequeños. Fíjate siempre en la dirección completa.</p>
+
+            <div class="grid-prevencion grid-tres">
+                <div class="prevencion-item">
+                    <h3>Una letra cambiada</h3>
+                    <span class="insignia">Real</span><code class="url url-real">banco-ejemplo.com</code>
+                    <span class="insignia alerta">Falsa</span><code class="url url-falsa">banc0-ejemplo.com</code>
+                    <p>Cambian la letra “o” por el número 0. A simple vista casi no se nota.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Un dominio escondido</h3>
+                    <span class="insignia">Real</span><code class="url url-real">tienda-ejemplo.com</code>
+                    <span class="insignia alerta">Falsa</span><code class="url url-falsa">tienda-ejemplo.com.ofertas-ya.net</code>
+                    <p>El dominio verdadero es lo último antes de la primera barra: aquí es <strong>ofertas-ya.net</strong>.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Otra terminación</h3>
+                    <span class="insignia">Real</span><code class="url url-real">correo-ejemplo.com</code>
+                    <span class="insignia alerta">Falsa</span><code class="url url-falsa">correo-ejemplo.co</code>
+                    <p>Cambiar <strong>.com</strong> por <strong>.co</strong> u otra terminación engaña a quien lee rápido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISTA: SEÑALES DE ALERTA -->
+    <section class="seccion fondo-claro vista" id="senales" data-hash="senales" data-titulo="Señales de alerta">
+        <div class="contenedor">
+            <span class="subtitulo">Aprende a verificar</span>
+            <h2 class="titulo">Cómo identificar un sitio sospechoso</h2>
+            <p class="descripcion">Ninguna señal basta por sí sola, pero varias juntas son motivo para no continuar.</p>
+
+            <div class="grid-prevencion">
+                <div class="prevencion-item">
+                    <h3>La dirección está mal escrita</h3>
+                    <p>Fíjate en letras cambiadas o añadidas, como <strong>banc0-ejemplo.com</strong> en lugar de <strong>banco-ejemplo.com</strong>.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Te presionan para actuar ya</h3>
+                    <p>“Tu cuenta será bloqueada en una hora” es una táctica común para que no pienses.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Piden datos que no deberían</h3>
+                    <p>Un servicio legítimo no te pide tu contraseña completa ni tu PIN por mensaje o correo.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>La oferta es demasiado buena</h3>
+                    <p>Premios que no pediste o precios muy por debajo del mercado suelen ser un cebo.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Faltan los datos de contacto</h3>
+                    <p>Sin dirección, teléfono ni políticas de privacidad claras, desconfía.</p>
+                </div>
+                <div class="prevencion-item">
+                    <h3>El candado no garantiza nada</h3>
+                    <p>El candado (HTTPS) solo indica que la conexión está cifrada, no que el sitio sea honesto. Los sitios falsos también lo usan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREVENCIÓN -->
+    <section class="seccion vista" id="proteccion" data-hash="proteccion" data-titulo="Protección">
+        <div class="contenedor">
+            <span class="subtitulo">Buenas prácticas</span>
+            <h2 class="titulo">Protege tu información</h2>
+
+            <ol class="grid-prevencion lista-limpia">
+                <li class="prevencion-item">
+                    <span aria-hidden="true">1</span>
+                    <h3>Verifica la dirección web</h3>
+                    <p>Comprueba que corresponde al sitio oficial antes de iniciar sesión.</p>
+                </li>
+                <li class="prevencion-item">
+                    <span aria-hidden="true">2</span>
+                    <h3>Protege tus contraseñas</h3>
+                    <p>Usa claves únicas y activa la verificación en dos pasos.</p>
+                </li>
+                <li class="prevencion-item">
+                    <span aria-hidden="true">3</span>
+                    <h3>Evita descargas desconocidas</h3>
+                    <p>Descarga programas únicamente de fuentes confiables.</p>
+                </li>
+                <li class="prevencion-item">
+                    <span aria-hidden="true">4</span>
+                    <h3>Mantén tus equipos actualizados</h3>
+                    <p>Instala las actualizaciones de seguridad cuando estén disponibles.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- VISTA: ¿QUÉ HACER? -->
+    <section class="seccion fondo-claro vista" id="que-hacer" data-hash="que-hacer" data-titulo="¿Qué hacer?">
+        <div class="contenedor">
+            <span class="subtitulo">Si ya pasó</span>
+            <h2 class="titulo">¿Qué hacer si caíste en un engaño?</h2>
+            <p class="descripcion">Actuar rápido reduce el daño. Elige la situación que se parece a la tuya.</p>
+
+            <div class="grid-prevencion grid-tres">
+                <div class="prevencion-item">
+                    <h3>Escribiste tu contraseña en una página falsa</h3>
+                    <ol class="lista">
+                        <li>Cambia la contraseña desde el sitio oficial.</li>
+                        <li>Si la usabas en otras cuentas, cámbiala también.</li>
+                        <li>Activa la verificación en dos pasos.</li>
+                        <li>Revisa si hay movimientos que no reconoces.</li>
+                    </ol>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Descargaste algo sospechoso</h3>
+                    <ol class="lista">
+                        <li>Desconecta el equipo de Internet.</li>
+                        <li>Ejecuta un análisis completo con un antivirus de confianza.</li>
+                        <li>Desinstala lo que no reconozcas.</li>
+                        <li>Cambia tus contraseñas desde otro dispositivo.</li>
+                    </ol>
+                </div>
+                <div class="prevencion-item">
+                    <h3>Te pidieron dinero o datos por mensaje</h3>
+                    <ol class="lista">
+                        <li>No respondas ni envíes dinero.</li>
+                        <li>Guarda capturas como evidencia.</li>
+                        <li>Bloquea el contacto y avisa a tu banco si compartiste datos bancarios.</li>
+                        <li>Denuncia ante las autoridades de tu país.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISTA: CONTACTO -->
+    <section class="seccion vista" id="contacto" data-hash="contacto" data-titulo="Contacto">
+        <div class="contenedor">
+            <span class="subtitulo">Escríbenos</span>
+            <h2 class="titulo">Contacto</h2>
+            <p class="descripcion">¿Viste un sitio sospechoso o tienes una duda? Cuéntanos y te responderemos.</p>
+
+            <form class="formulario" id="formContacto">
+                <label>Tu nombre
+                    <input type="text" name="nombre" required autocomplete="name">
+                </label>
+                <label>Mensaje
+                    <textarea name="mensaje" required></textarea>
+                </label>
+                <button class="btn btn-azul" type="submit">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- LABORATORIO UX -->
+    <section class="seccion fondo-claro vista" id="laboratorio" data-hash="laboratorio" data-titulo="Laboratorio UX">
+        <div class="contenedor">
+            <span class="subtitulo">Diseño de interfaces</span>
+            <h2 class="titulo">Laboratorio UX</h2>
             <p class="descripcion">
-
-                Formamos estudiantes íntegros, competentes y
-                solidarios, preparados para los desafíos del futuro.
-
+                Una buena interfaz también protege: si es clara y accesible, es más difícil
+                cometer errores o caer en engaños. Estos son cuatro ejemplos de esta misma página.
             </p>
 
-            <a href="#nosotros" class="boton">
+            <div class="laboratorio">
 
-                CONOCE MÁS
-                <strong>→</strong>
+                <article class="experimento">
+                    <h3>Skeleton screens</h3>
+                    <p>Muestran una estructura temporal mientras se prepara el contenido. Pulsa el botón para verlos sobre las tarjetas de amenazas.</p>
+                    <p class="aplicado"><strong>En esta página:</strong> aparecen un instante al buscar, para indicar que los resultados se están actualizando.</p>
+                    <button class="btn btn-azul" id="repetirSkeleton" type="button">Ver animación</button>
+                </article>
 
-            </a>
+                <article class="experimento">
+                    <h3>Ley de Hick: demasiadas opciones</h3>
+                    <p>Cuantas más opciones, más cuesta decidir. Compara dos menús.</p>
+                    <p class="aplicado"><strong>En esta página:</strong> el menú agrupa todo en 6 secciones y el resto se abre desde dentro (Spyware desde su tarjeta, el laboratorio desde “Aprender más”). Las amenazas extra se muestran con “Ver todas”.</p>
 
+                    <h4>Ejemplo sobrecargado (solo demostración)</h4>
+                    <div class="opciones-exceso" aria-hidden="true">
+                        <span>Inicio</span><span>Ayuda</span><span>Noticias</span><span>Videos</span>
+                        <span>Spyware</span><span>Malware</span><span>Phishing</span><span>Virus</span>
+                        <span>Consejos</span><span>Recursos</span><span>Preguntas</span><span>Seguridad</span>
+                    </div>
+
+                    <h4>Alternativa organizada</h4>
+                    <div class="opciones-correctas">
+                        <a href="#amenazas">Amenazas</a>
+                        <a href="#proteccion">Prevención</a>
+                        <a href="#video">Videos</a>
+                    </div>
+                </article>
+
+                <article class="experimento">
+                    <h3>Design tokens</h3>
+                    <p>Son variables reutilizables para colores, espacios y bordes. Toda esta página usa los mismos.</p>
+                    <p class="aplicado"><strong>En esta página:</strong> colores, tipografía, espacios, radios y elevaciones salen de variables en <code>:root</code>. El rojo se reserva para amenazas y alertas.</p>
+                    <div class="tokens">
+                        <div><span class="muestra token-lienzo"></span><small>Lienzo</small></div>
+                        <div><span class="muestra token-vidrio"></span><small>Panel</small></div>
+                        <div><span class="muestra token-cian"></span><small>Cian</small></div>
+                        <div><span class="muestra token-violeta"></span><small>Azul</small></div>
+                        <div><span class="muestra token-alerta"></span><small>Alerta</small></div>
+                    </div>
+                </article>
+
+                <article class="experimento">
+                    <h3>Estándares de accesibilidad</h3>
+                    <p>Poco contraste, letras pequeñas o controles sin identificar dificultan el uso.</p>
+                    <p class="aplicado"><strong>En esta página:</strong> contraste mínimo de 4,5:1, botones de al menos 44 px, foco visible, uso completo con teclado, aviso de cambios a lectores de pantalla y respeto a “reducir movimiento”.</p>
+                    <div class="comparacion">
+                        <div class="mal-ejemplo" aria-hidden="true">
+                            <strong>Incorrecto</strong>
+                            <p>Texto difícil de leer.</p>
+                            <span class="boton-malo">clic</span>
+                        </div>
+                        <div class="buen-ejemplo">
+                            <strong>Mejorado</strong>
+                            <p>Texto legible y contraste adecuado.</p>
+                            <a class="btn btn-azul" href="#proteccion">Más información</a>
+                        </div>
+                    </div>
+                    <p class="nota">El ejemplo incorrecto es solo una demostración visual y no se usa en el sitio.</p>
+                </article>
+
+            </div>
         </div>
-
     </section>
 
+    <!-- VIDEOS -->
+    <section class="seccion vista" id="video" data-hash="video" data-titulo="Videos">
+        <div class="contenedor">
+            <span class="subtitulo">Aprende más</span>
+            <h2 class="titulo">Videos educativos</h2>
 
-    <!-- =========================
-         PILARES
-    ========================== -->
-
-    <section class="pilares" id="nosotros">
-
-        <p class="subtitulo">
-            NUESTROS PILARES
-        </p>
-
-        <h2>
-            ¿POR QUÉ ELEGIRNOS?
-        </h2>
-
-        <div class="linea"></div>
-
-
-        <div class="tarjetas">
-
-            <!-- TARJETA 1 -->
-
-            <div class="tarjeta">
-
-                <div class="icono">
-                    📖
+            <div class="video-contenedor">
+                <div class="video-texto">
+                    <h3>Conoce las amenazas digitales</h3>
+                    <p>
+                        Este enlace abre una búsqueda en YouTube con videos sobre spyware
+                        de empresas de ciberseguridad. Se abre en una pestaña nueva.
+                    </p>
+                    <a class="btn btn-azul" href="https://www.youtube.com/results?search_query=Kaspersky+What+is+Spyware"
+                       target="_blank" rel="noopener noreferrer">Buscar videos en YouTube <svg class="icono" aria-hidden="true"><use href="#i-external"/></svg></a>
                 </div>
 
-                <h3>
-                    EDUCACIÓN DE CALIDAD
-                </h3>
-
-                <p>
-                    Brindamos una educación académica
-                    de excelencia con enfoque en valores.
-                </p>
-
-                <div class="linea-tarjeta"></div>
-
-            </div>
-
-
-            <!-- TARJETA 2 -->
-
-            <div class="tarjeta">
-
-                <div class="icono rojo">
-                    👥
+                <div class="video-imagen" aria-hidden="true">
+                    <svg class="icono" aria-hidden="true"><use href="#i-book"/></svg>
+                    <p>Material externo</p>
                 </div>
-
-                <h3>
-                    FORMACIÓN INTEGRAL
-                </h3>
-
-                <p>
-                    Desarrollamos habilidades académicas,
-                    sociales, deportivas y artísticas.
-                </p>
-
-                <div class="linea-tarjeta rojo-linea"></div>
-
             </div>
-
-
-            <!-- TARJETA 3 -->
-
-            <div class="tarjeta">
-
-                <div class="icono">
-                    ❤️
-                </div>
-
-                <h3>
-                    VALORES
-                </h3>
-
-                <p>
-                    Promovemos el respeto, responsabilidad,
-                    honestidad y solidaridad.
-                </p>
-
-                <div class="linea-tarjeta"></div>
-
-            </div>
-
-
-            <!-- TARJETA 4 -->
-
-            <div class="tarjeta">
-
-                <div class="icono rojo">
-                    🏫
-                </div>
-
-                <h3>
-                    COMUNIDAD
-                </h3>
-
-                <p>
-                    Trabajamos en conjunto con padres de
-                    familia para el bienestar de nuestros estudiantes.
-                </p>
-
-                <div class="linea-tarjeta rojo-linea"></div>
-
-            </div>
-
         </div>
-
     </section>
-<!-- =========================
-     GALERÍA
-========================= -->
 
-<section class="galeria" id="galeria">
+</main>
 
-    <p class="subtitulo">
-        NUESTRA INSTITUCIÓN
-    </p>
+<aside class="accesos" aria-label="Accesos rápidos">
+    <a href="#contacto"><svg class="icono" aria-hidden="true"><use href="#i-alert"/></svg> <span>Reportar riesgo</span></a>
+    <a href="#proteccion"><svg class="icono" aria-hidden="true"><use href="#i-book"/></svg> <span>Consejos de seguridad</span></a>
+    <a href="#laboratorio"><svg class="icono" aria-hidden="true"><use href="#i-cap"/></svg> <span>Aprender más</span></a>
+</aside>
 
-    <h2>
-        GALERÍA
-    </h2>
-
-    <div class="linea"></div>
-
-    <div class="fotos">
-
-        <img src="colegio.jpg" alt="Colegio">
-<img src="colegio 2.jpg" alt="Colegio">
-<img src="colegio3.jpg" alt="Colegio">
-<img src="colegio4.jpg" alt="Colegio">
-<img src="imagen.jpg" alt="Actividad escolar">
-<img src="images.jpg" alt="Actividad escolar">
-    </div>
-
-</section>
-
-    <!-- =========================
-         INFORMACIÓN DE CONTACTO
-    ========================== -->
-
-    <!-- =========================
-     CONTACTO
-========================= -->
-
-<section class="contacto" id="contacto">
-
-    <div class="contacto-info">
-
-        <p class="subtitulo">
-            CONTÁCTANOS
-        </p>
-
-        <h2>
-            ¿QUIERES MÁS INFORMACIÓN?
-        </h2>
-
-        <p>
-            Déjanos tus datos y nos pondremos en contacto
-            contigo para brindarte más información sobre
-            nuestra institución educativa.
-        </p>
-
-        <div class="datos-contacto">
-
-            <p>📍 Av. Siempre Viva 123</p>
-
-            <p>☎ (02) 123 4567</p>
-
-            <p>✉ info@micolegio.edu.ec</p>
-
+<footer>
+    <div class="contenedor footer-contenido">
+        <div>
+            <h2><svg class="icono" aria-hidden="true"><use href="#i-shield"/></svg> NAVEGA SEGURO</h2>
+            <p>Educación para una Internet más segura.</p>
         </div>
-
-    </div>
-
-
-    <!-- FORMULARIO -->
-
-    <div class="formulario">
-
-        <h3>
-            Solicita información
-        </h3>
-
-        <form action="https://formspree.io/f/mwlpajpb" method="POST">
-
-            <label>Nombre completo</label>
-            <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
-        
-            <label>Correo electrónico</label>
-            <input type="email" name="email" placeholder="ejemplo@gmail.com" required>
-        
-            <label>Teléfono</label>
-            <input type="tel" name="telefono" placeholder="099 123 4567">
-        
-            <label>Curso de interés</label>
-            <select name="curso">
-                <option value="">Selecciona un curso</option>
-                <option>Educación Inicial</option>
-                <option>Educación Básica</option>
-                <option>Bachillerato</option>
-            </select>
-        
-            <label>Mensaje</label>
-            <textarea name="mensaje" placeholder="Escribe tu mensaje..." rows="5"></textarea>
-        
-            <button type="submit">
-                ENVIAR SOLICITUD →
-            </button>
-        
-        </form>
-    </div>
-
-</section>
-<div class="contador">
-    👁️ Visitas: <span id="visitas">0</span>
-</div>
-<script>
-    let visitas = localStorage.getItem("contadorVisitas");
-
-    if (visitas === null) {
-        visitas = 1;
-    } else {
-        visitas = parseInt(visitas) + 1;
-    }
-
-    localStorage.setItem("contadorVisitas", visitas);
-
-    document.getElementById("visitas").textContent = visitas;
-</script>
-    <!-- =========================
-         PIE DE PÁGINA
-    ========================== -->
-
-    <footer>
-
-        <p>
-            © 2026 Mi Colegio. Todos los derechos reservados.
-        </p>
-
-        <div class="redes">
-            ●　◎　▶
+        <div>
+            <p class="pie-enlaces"><a href="#laboratorio">Laboratorio UX</a> · <a href="#video">Videos</a></p>
+            <small>© 2026 Navega Seguro. Proyecto educativo.</small>
         </div>
-
-    </footer>
-
+    </div>
+</footer>
 
 </body>
-
 </html>
